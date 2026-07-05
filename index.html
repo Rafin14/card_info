@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dr. Md. Nabiul Hassan Rana | Nephrologist</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+    <style>
+        /* ── Reset & Base ── */
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #f4f2f9;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 1.5rem;
+            background-image:
+                radial-gradient(ellipse at 20% 50%, rgba(74, 74, 122, 0.04) 0%, transparent 70%),
+                radial-gradient(ellipse at 80% 50%, rgba(74, 74, 122, 0.04) 0%, transparent 70%);
+        }
+
+        /* ── Main Card ── */
+        .profile-card {
+            max-width: 1100px;
+            width: 100%;
+            background: #ffffff;
+            border-radius: 28px;
+            box-shadow:
+                0 20px 60px rgba(74, 74, 122, 0.08),
+                0 8px 24px rgba(74, 74, 122, 0.04);
+            overflow: hidden;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .profile-card:hover {
+            box-shadow:
+                0 30px 80px rgba(74, 74, 122, 0.12),
+                0 12px 32px rgba(74, 74, 122, 0.06);
+        }
+
+        /* ── Inner Layout ── */
+        .profile-inner {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 2.5rem 3rem;
+            gap: 2.5rem;
+            align-items: stretch;
+        }
+
+        /* ── Left: Image ── */
+        .profile-image-wrapper {
+            flex: 0 0 220px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        .image-container {
+            width: 100%;
+            aspect-ratio: 1 / 1.15;
+            border-radius: 18px;
+            overflow: hidden;
+            background: #e2ddf0;
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.04);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .image-container:hover {
+            transform: scale(1.01);
+            box-shadow: 0 8px 24px rgba(74, 74, 122, 0.08);
+        }
+
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* ── Right: Content ── */
+        .profile-content {
+            flex: 1;
+            min-width: 280px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        /* ── Top Accent Line ── */
+        .accent-line {
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, #4a4a7a, #8a7fc4);
+            border-radius: 4px;
+            margin-bottom: 1.2rem;
+        }
+
+        /* ── Name ── */
+        .doctor-name {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 2.6rem;
+            line-height: 1.15;
+            color: #1a1a2e;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.3rem;
+        }
+
+        .doctor-name .highlight {
+            color: #8a7fc4;
+            font-weight: 400;
+            font-style: italic;
+        }
+
+        /* ── Credentials ── */
+        .credentials {
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            font-size: 1.05rem;
+            color: #4a4a5a;
+            letter-spacing: 0.3px;
+            margin-bottom: 0.5rem;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: baseline;
+            gap: 0.3rem 0.6rem;
+        }
+
+        .credentials .sep {
+            color: #8a7fc4;
+            font-weight: 300;
+            font-size: 1.2rem;
+        }
+
+        /* ── Title ── */
+        .title-row {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: baseline;
+            gap: 0.5rem 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .title-role {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            font-size: 1.3rem;
+            color: #2a2a4a;
+            letter-spacing: 0.2px;
+        }
+
+        .reg-number {
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            font-size: 0.9rem;
+            color: #6a6a8a;
+            background: #f0eef7;
+            padding: 0.2rem 1rem;
+            border-radius: 30px;
+            letter-spacing: 0.2px;
+            border: 1px solid rgba(138, 127, 196, 0.15);
+        }
+
+        /* ── Hospital Name ── */
+        .hospital-name {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            font-size: 1.25rem;
+            color: #1a1a2e;
+            margin-bottom: 0.3rem;
+            letter-spacing: 0.3px;
+        }
+
+        .hospital-name .accent {
+            color: #8a7fc4;
+            font-weight: 400;
+        }
+
+        /* ── Divider ── */
+        .divider-light {
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, #e4def0, transparent);
+            margin: 0.8rem 0 1rem 0;
+            opacity: 0.6;
+        }
+
+        /* ── Contact Grid ── */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.6rem 1.5rem;
+            margin-top: 0.2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            color: #2d2d4a;
+            padding: 0.3rem 0;
+            border-bottom: 2px solid rgba(0, 0, 0, 0.06);
+            transition: color 0.2s ease;
+        }
+
+        .contact-item:hover {
+            color: #4a4a7a;
+        }
+
+        .contact-item .label-text {
+            font-weight: 400;
+            color: #8a8aaa;
+            min-width: 6rem;
+            font-size: 0.85rem;
+            letter-spacing: 0.2px;
+            flex-shrink: 0;
+        }
+
+        .contact-item .value {
+            font-weight: 500;
+            color: #1a1a2e;
+            word-break: break-word;
+        }
+
+        .contact-item .value a {
+            color: #1a1a2e;
+            text-decoration: none;
+            border-bottom: 1px dotted transparent;
+            transition: border-color 0.2s ease, color 0.2s ease;
+        }
+
+        .contact-item .value a:hover {
+            border-bottom-color: #8a7fc4;
+            color: #8a7fc4;
+        }
+
+        /* Address row (full width) */
+        .address-row {
+            grid-column: 1 / -1;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 0.3rem 0;
+            border-bottom: 2px solid rgba(0, 0, 0, 0.06);
+        }
+
+        .address-row .label-text {
+            font-weight: 400;
+            color: #8a8aaa;
+            min-width: 6rem;
+            font-size: 0.85rem;
+            letter-spacing: 0.2px;
+            flex-shrink: 0;
+        }
+
+        .address-row .value {
+            font-weight: 500;
+            color: #1a1a2e;
+            font-size: 0.95rem;
+        }
+
+        /* ── Bottom Hospital Badge ── */
+        .hospital-badge {
+            margin-top: 1.2rem;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 1.5rem 2.5rem;
+            padding-top: 0.8rem;
+            border-top: 1px solid #ede8f5;
+        }
+
+        /* Logo Container */
+        .logo-container {
+            width: 200px;
+            height: 60px;
+            border-radius: 14px;
+            overflow: hidden;
+            background: #f9f8fc;
+            border: 2px solid #8a7fc4;
+            transition: background 0.2s ease, border-color 0.2s ease;
+            flex-shrink: 0;
+        }
+
+        .logo-container:hover {
+            background: #f4f2fa;
+            border-color: #6c63a0;
+        }
+
+        .logo-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+        }
+
+        .hospital-badge .hcontact {
+            font-size: 0.9rem;
+            color: #4a4a5a;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 0.5rem 1.2rem;
+        }
+
+        .hospital-badge .hcontact span {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .hospital-badge .hcontact .sep-dot {
+            color: #8a7fc4;
+            font-weight: 300;
+        }
+
+        .hospital-badge .hcontact .label {
+            font-weight: 400;
+            color: #8a8aaa;
+            font-size: 0.8rem;
+            letter-spacing: 0.2px;
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 850px) {
+            .profile-inner {
+                padding: 2rem 1.8rem;
+                gap: 1.8rem;
+            }
+
+            .profile-image-wrapper {
+                flex: 0 0 180px;
+            }
+
+            .doctor-name {
+                font-size: 2.2rem;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 0.3rem;
+            }
+
+            .address-row {
+                grid-column: 1;
+            }
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 1rem 0.8rem;
+            }
+
+            .profile-inner {
+                padding: 1.5rem 1.2rem;
+                flex-direction: column;
+                align-items: center;
+                gap: 1.5rem;
+            }
+
+            .profile-image-wrapper {
+                flex: 0 0 auto;
+                width: 160px;
+            }
+
+            .doctor-name {
+                font-size: 1.8rem;
+                text-align: center;
+            }
+
+            .credentials {
+                font-size: 0.95rem;
+                justify-content: center;
+                text-align: center;
+            }
+
+            .title-row {
+                justify-content: center;
+                text-align: center;
+            }
+
+            .title-role {
+                font-size: 1.1rem;
+            }
+
+            .hospital-name {
+                text-align: center;
+                font-size: 1.1rem;
+            }
+
+            .accent-line {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 0.2rem;
+            }
+
+            .contact-item,
+            .address-row {
+                font-size: 0.9rem;
+                padding: 0.4rem 0;
+            }
+
+            .hospital-badge {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                gap: 0.8rem;
+            }
+
+            .hospital-badge .hcontact {
+                justify-content: center;
+                font-size: 0.85rem;
+            }
+
+            .contact-item .label-text,
+            .address-row .label-text {
+                min-width: 4.5rem;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .profile-inner {
+                padding: 1rem 0.8rem;
+            }
+
+            .doctor-name {
+                font-size: 1.5rem;
+            }
+
+            .contact-item .label-text,
+            .address-row .label-text {
+                min-width: 3.8rem;
+                font-size: 0.8rem;
+            }
+
+            .contact-item .value {
+                font-size: 0.85rem;
+            }
+        }
+
+        /* ── Print-friendly ── */
+        @media print {
+            body {
+                background: #fff;
+                padding: 0.5in;
+            }
+
+            .profile-card {
+                box-shadow: none;
+                border: 1px solid #ddd;
+                border-radius: 12px;
+            }
+
+            .profile-card:hover {
+                box-shadow: none;
+            }
+
+            .contact-item .value a {
+                border-bottom: none !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="profile-card">
+        <div class="profile-inner">
+
+            <!-- ─── DOCTOR PHOTO ─── -->
+            <div class="profile-image-wrapper">
+                <div class="image-container">
+                    <img src="id.jpg" alt="Dr. Md. Nabiul Hassan Rana" />
+                </div>
+                <p style="font-size:0.7rem; color:#9a92b0; margin-top:0.6rem; letter-spacing:0.3px; font-weight:300;">
+                    Dr. Md. Nabiul Hassan Rana
+                </p>
+            </div>
+
+            <!-- ─── CONTENT ─── -->
+            <div class="profile-content">
+
+                <!-- Accent line -->
+                <div class="accent-line"></div>
+
+                <!-- Name -->
+                <h1 class="doctor-name">
+                    Dr. Md. Nabiul Hassan Rana
+                    <span class="highlight">&nbsp;</span>
+                </h1>
+
+                <!-- Credentials -->
+                <div class="credentials">
+                    <span>MBBS (DMC)</span>
+                    <span class="sep">·</span>
+                    <span>MD (Nephrology)</span>
+                </div>
+
+                <!-- Title + Reg -->
+                <div class="title-row">
+                    <span class="title-role">Senior Consultant — Nephrology</span>
+                    <span class="reg-number">BM&DC Reg. No: A 16075</span>
+                </div>
+
+                <!-- Hospital Name -->
+                <div class="hospital-name">
+                    <span class="accent">✦</span> BRB Hospital Limited
+                </div>
+
+                <!-- Divider -->
+                <div class="divider-light"></div>
+
+                <!-- Contact Grid -->
+                <div class="contact-grid">
+
+                    <!-- Phone -->
+                    <div class="contact-item">
+                        <span class="label-text">Phone</span>
+                        <span class="value">
+                            <a href="tel:+8801715665309">+88 01715-665309</a>
+                        </span>
+                    </div>
+
+                    <!-- Email -->
+                    <div class="contact-item">
+                        <span class="label-text">Email</span>
+                        <span class="value">
+                            <a href="mailto:nabiulh@gmail.com">nabiulh@gmail.com</a>
+                        </span>
+                    </div>
+
+                    <!-- Address (full width) -->
+                    <div class="address-row">
+                        <span class="label-text">Address</span>
+                        <span class="value">77/A, Panthapath, Dhaka-1215</span>
+                    </div>
+
+                    <!-- Hospital Phone -->
+                    <div class="contact-item">
+                        <span class="label-text">Hospital</span>
+                        <span class="value">10647</span>
+                    </div>
+
+                    <!-- Hospital Email -->
+                    <div class="contact-item">
+                        <span class="label-text">Hosp. Email</span>
+                        <span class="value">
+                            <a href="mailto:info@brbhospital.com">info@brbhospital.com</a>
+                        </span>
+                    </div>
+
+                    <!-- Hospital Website -->
+                    <div class="contact-item">
+                        <span class="label-text">Website</span>
+                        <span class="value">
+                            <a href="https://www.brbhospital.com" target="_blank">brbhospital.com</a>
+                        </span>
+                    </div>
+
+                </div>
+
+                <!-- ─── HOSPITAL BADGE (Logo + Contact) ─── -->
+                <div class="hospital-badge">
+
+                    <!-- Logo -->
+                    <div class="logo-container">
+                        <img src="brb_logo.png" alt="BRB Hospitals Logo" />
+                    </div>
+
+                    <!-- Hospital Contact Details -->
+                    <div class="hcontact">
+                        <span><span class="label">Phone</span> 10647</span>
+                        <span class="sep-dot">·</span>
+                        <span><span class="label">Email</span> info@brbhospital.com</span>
+                        <span class="sep-dot">·</span>
+                        <span><span class="label">Web</span> brbhospital.com</span>
+                    </div>
+
+                </div>
+
+            </div>
+            <!-- /profile-content -->
+
+        </div>
+        <!-- /profile-inner -->
+    </div>
+    <!-- /profile-card -->
+
+</body>
+</html>
