@@ -277,6 +277,18 @@
             font-size: 0.95rem;
         }
 
+        .address-row .value a {
+            color: #1a1a2e;
+            text-decoration: none;
+            border-bottom: 1px dotted transparent;
+            transition: border-color 0.2s ease, color 0.2s ease;
+        }
+
+        .address-row .value a:hover {
+            border-bottom-color: #8a7fc4;
+            color: #8a7fc4;
+        }
+
         /* ── Bottom Hospital Badge ── */
         .hospital-badge {
             margin-top: 1.2rem;
@@ -553,7 +565,9 @@
                     <!-- Address (full width) -->
                     <div class="address-row">
                         <span class="label-text">Address</span>
-                        <span class="value">77/A, Panthapath, Dhaka-1215</span>
+                        <span class="value">
+                            <a href="https://maps.app.goo.gl/33dc5T37Kpm2otBP6" target="_blank" rel="noopener">77/A, Panthapath, Dhaka-1215</a>
+                        </span>
                     </div>
 
                     <!-- Hospital Phone -->
